@@ -17,6 +17,11 @@ This is a practice project focusing on building a basic application skeleton wit
 3. **List Customers:**
    - Fetches and displays a list of customers from the backend.
    - Renders the customer information in a table format.
+## Planned Features
+1. **Add books**
+2. **List Orders**
+3. **Create fully working orders**
+4. **Complete design rework**
 
 ## How to Run
 
