@@ -3,20 +3,21 @@ import React, { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
 
 function CustomersTable() {
-  const [customer, setCustomer] = useState([]);
+  const [customers, setCustomers] = useState([]); // Rename 'customer' to 'customers' for clarity
   const [error, setError] = useState(null);
 
-useEffect(() => {
-  axios.get('http://localhost:8080/api/customer/all')
-    .then(response => {
-      console.log('Customer data:', response.data);
-      setCustomer(response.data);
-    })
-    .catch(error => {
-      console.error('Error fetching customers:', error);
-      setError(error.message);
-    });
-}, []);
+  useEffect(() => {
+    axios
+      .get('http://localhost:8080/api/customer/all')
+      .then((response) => {
+        console.log('Customer data:', response.data);
+        setCustomers(response.data); // Rename 'setCustomer' to 'setCustomers'
+      })
+      .catch((error) => {
+        console.error('Error fetching customers:', error);
+        setError(error.message);
+      });
+  }, []);
 
   if (error) {
     return <div>Error: {error}</div>;
@@ -34,13 +35,13 @@ useEffect(() => {
         </tr>
       </thead>
       <tbody>
-        {customer.map(customer => (
+        {customers.map((customer) => (
           <tr key={customer.id}>
             <td>{customer.firstName}</td>
             <td>{customer.lastName}</td>
             <td>{customer.email}</td>
             <td>{customer.address}</td>
-            <td>{customer.phoneNumber}</td>            
+            <td>{customer.phoneNumber}</td>
           </tr>
         ))}
       </tbody>

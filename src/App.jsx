@@ -5,10 +5,10 @@ import CustomersTable from '../src/components/CustomersTable';
 import './App.css';
 import reactLogo from './assets/react.svg';
 import NewCustomerForm from './components/NewCustomerForm';
+import OrderTable from './components/OrderTable';
 import viteLogo from '/vite.svg';
 
 function App() {
-
   return (
     <>
       <div>
@@ -20,11 +20,12 @@ function App() {
         </a>
       </div>
       <h1>Bookstore!</h1>
-      <NewCustomerForm/>
-      <CustomersTable/>
+      <NewCustomerForm />
+      <CustomersTable />
+      <OrderTable />
       <BooksTable />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
